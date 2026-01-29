@@ -1,0 +1,4 @@
+ssh_port: 22
+bantime: 600          # 10 minutes
+findtime: 600         # Time window for detecting repeated failures
+maxretry: 5           # Max failed attempts before ban

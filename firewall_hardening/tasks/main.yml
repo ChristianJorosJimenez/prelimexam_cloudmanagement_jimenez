@@ -1,0 +1,31 @@
+---
+- name: Install UFW firewall
+  apt:
+    name: ufw
+    state: present
+    update_cache: yes
+
+- name: Reset UFW to clean state
+  ufw:
+    state: reset
+
+- name: Set default deny incoming
+  ufw:
+    direction: incoming
+    policy: deny
+
+- name: Set default allow outgoing
+  ufw:
+    direction: outgoing
+    policy: allow
+
+- name: Allow SSH with rate limiting
+  ufw:
+    rule: limit
+    port: "{{ ssh_port }}"
+    proto: tcp
+    src: "{{ allowed_ssh_cidr }}"
+
+- name: Enable UFW
+  ufw:
+    state: enabled

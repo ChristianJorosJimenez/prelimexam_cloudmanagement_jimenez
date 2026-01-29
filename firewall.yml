@@ -1,0 +1,6 @@
+---
+- name: Apply firewall hardening
+  hosts: localhost
+  become: yes
+  roles:
+    - firewall_hardening

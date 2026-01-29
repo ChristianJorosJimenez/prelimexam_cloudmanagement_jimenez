@@ -1,0 +1,7 @@
+---
+- name: Apply hardenting baselines
+  hosts: all
+  become: yes
+
+  roles:
+    - hardening_baseline

@@ -1,0 +1,2 @@
+ssh_port: 22
+allowed_ssh_cidr: any

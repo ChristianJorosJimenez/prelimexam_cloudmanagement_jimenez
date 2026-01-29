@@ -1,0 +1,6 @@
+---
+- name: Apply Fail2Ban hardening
+  hosts: localhost
+  become: yes
+  roles:
+    - fail2ban_hardening
